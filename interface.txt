@@ -1,0 +1,35 @@
+// receives in input a number to add to the set
+procedure AddNumber(x);
+
+// receives in input a number to erase from the set
+procedure EraseNumber(x);
+
+//asks what is the maximum number in the set
+function MaxNumber();
+
+//asks what is the n-th number in the set
+function nthNumber(n);
+
+main {
+    read q;
+    for i to q{
+        read t;
+        if t == 3 { 
+            call res = MaxNumber();
+        } else {
+            if(t == 4){
+                read n;
+                call res = nthNumber(n);
+                write res;
+            }else{
+                read x;
+                if(t == 1){
+                    call AddNumber(x);
+                }else{
+                    //assert t == 2
+                    call EraseNumber(x);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+[problem]
+title = "Mantenimento dinamico del valore massimo"
+
+[scoring]
+goals = [
+    "linear",
+    "constant-noremove",
+    "logn",
+    "logn-no_libraries",
+    "logn-nth",
+    "logn-nth-no_libraries",
+]

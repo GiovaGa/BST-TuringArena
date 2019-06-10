@@ -4,6 +4,9 @@ procedure AddNumber(x);
 // receives in input a number to erase from the set
 procedure EraseNumber(x);
 
+//asks if a number is in the set, returns 0 if the number is not present, 1 if it is
+function isPresent(x);
+
 //asks what is the maximum number in the set
 function MaxNumber();
 
@@ -14,21 +17,28 @@ main {
     read q;
     for i to q{
         read t;
-        if t == 3 { 
-            call res = MaxNumber();
-        } else {
-            if(t == 4){
-                read n;
-                call res = nthNumber(n);
-                write res;
-            }else{
+        switch t {
+            case 0 {
                 read x;
-                if(t == 1){
-                    call AddNumber(x);
-                }else{
-                    //assert t == 2
-                    call EraseNumber(x);
-                }
+                call AddNumber(x);
+            }
+            case 1 {
+                read x;
+                call EraseNumber(x);
+            }
+            case 2 {
+                read x;
+                call ans = isPresent(x);
+                write ans;
+            }
+            case 3 {
+                call ans = MaxNumber();
+                write ans;
+            }
+            case 4 {
+                read n;
+                call ans = nthNumber(n);
+                write ans;
             }
         }
     }
